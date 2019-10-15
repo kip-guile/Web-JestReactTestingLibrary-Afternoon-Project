@@ -33,3 +33,6 @@ export function personMaker(name, age) {
 }
 
 // BUILD YOUR OWN UTILITY FUNCTIONS AND TEST THEM OUT!
+export function bool(){
+  return true;
+};

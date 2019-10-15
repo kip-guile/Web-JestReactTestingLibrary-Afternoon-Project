@@ -28,6 +28,18 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
+  it('multiply negative numbers', () => {
+    expect(helpers.multiply(-3, -4)). toBe(12);
+  });
+  it('multiply +ve numbers', () => {
+    expect(helpers.multiply(2, 5)).toBe(10);
+  });
+  it('multiply +ve and -ve args', () => {
+    expect(helpers.multiply(-3, 7)).toBe(-21);
+  });
+  it('throws error when arguments arent numbers', () => {
+    expect(() => helpers.multiply('girl', 'boy')).toThrow();
+  });
 });
 
 describe('personMaker', () => {
@@ -39,6 +51,22 @@ describe('personMaker', () => {
         age: 4,
       });
   });
+  it('matches', () => {
+    expect(helpers.personMaker('james', 4)).toEqual({
+      id: '123',
+      name: 'james',
+      age: 4,
+    });
+  })
 
   // write more tests! <===========================================
 });
+
+describe('bool', () => {
+  it('returns true if an arg is passed', () => {
+    expect(helpers.bool(1)).toBe(true);
+  });
+  it('returns true if no arg is passed', () => {
+    expect(helpers.bool()).toBe(true);
+  });
+})
